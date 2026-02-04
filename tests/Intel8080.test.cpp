@@ -117,7 +117,7 @@ void onDataInput(Intel8080& intel8080, Memory& memory, bool debug, bool verbose)
                     intel8080.getABus(),
                     intel8080.getDBus());
     } else if (intel8080.status == Intel8080::inputRead) {
-        intel8080.setDBus(0ULL);
+        intel8080.setDBus(uint_fast64_t(0ULL));
     } else {
         std::cout << std::format("ERROR: unrecognized status word with DBIN pin high '{:b}' - {:s}\n",
                                  intel8080.status, disassambleTable[intel8080.ir]);

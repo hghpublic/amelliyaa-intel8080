@@ -1610,7 +1610,7 @@ inline void Intel8080::readT1_(const std::uint16_t addr)
 inline void Intel8080::writeT1_(const std::uint16_t addr)
 {
     setABus_(addr);
-    setDBus(0ULL);
+    setDBus(uint_fast64_t(0ULL));
     t1_();
 }
 
